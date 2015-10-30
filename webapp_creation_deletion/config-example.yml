@@ -1,0 +1,7 @@
+dojo_url: <dojo_url e.g. 'https://dojo.zenedge.com'>
+client_id: <client_id_string>
+client_secret: <client_secret_string>
+origin_server_ip: <ip_string e.g. '127.0.0.1'>
+origin_server_port: <port_int  e.g. 80>
+origin_server_weight: <weight_int  e.g. 1>,
+base_domain_redirect_from: <true or false>
