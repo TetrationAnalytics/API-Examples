@@ -1,0 +1,16 @@
+{
+  "domain": "file",
+  "additional_domains": [{
+    "name": "example.com"
+  }],
+  "origin_servers": [{
+    "ip": "example.com",
+    "port": 80,
+    "weight": 1
+  }],
+  "backup_servers": [{
+    "ip": "test.com",
+    "port": 80
+  }],
+  "base_domain_redirect_from": "www"
+}

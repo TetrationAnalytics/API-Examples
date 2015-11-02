@@ -1,0 +1,3 @@
+dojo_url: <dojo_url e.g. 'https://dojo.zenedge.com'>
+client_id: <client_id_string>
+client_secret: <client_secret_string>

@@ -1,0 +1,10 @@
+{
+  "name": "images caching rule",
+  "setting_type": "file_cache_rule",
+  "expire_after": 1,
+  "expire_time_unit": "h",
+  "client_expire_after": 1,
+  "client_expire_time_unit": "h",
+  "client_expire_after_enabled": "true",
+  "cache_set": "jpg,png"
+}
