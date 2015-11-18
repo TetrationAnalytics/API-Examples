@@ -26,7 +26,7 @@ namespace DojoApiDemo
                     {"client_secret",  ConfigurationManager.AppSettings["client_secret"]}
                 };
                 Console.WriteLine("...Testing POST api/oauth/token");
-                var tokenRes = await client.PostAsync("https://dojo-rc.zenedge.com/api/oauth/token", new FormUrlEncodedContent(form));
+                var tokenRes = await client.PostAsync("https://dojo.zenedge.com/api/oauth/token", new FormUrlEncodedContent(form));
 
                 if (!tokenRes.IsSuccessStatusCode)
                 {
@@ -54,7 +54,7 @@ namespace DojoApiDemo
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
                 Console.WriteLine("...Testing POST api/v2/webapps");
-                var authRes = await client.PostAsJsonAsync("https://dojo-rc.zenedge.com/api/v2/webapps", demoWebApp);
+                var authRes = await client.PostAsJsonAsync("https://dojo.zenedge.com/api/v2/webapps", demoWebApp);
                 if (!authRes.IsSuccessStatusCode)
                 {
                     Console.WriteLine("There was an error creating a webapp, maybe it already exists");
@@ -70,7 +70,7 @@ namespace DojoApiDemo
                 };
 
                 Console.WriteLine("...Testing PUT api/v2/webapps/<webapp_id>/purge_all");
-                authRes = await client.PutAsJsonAsync(string.Format("https://dojo-rc.zenedge.com/api/v2/webapps/{0}/purge_all", webappRes.Id), demoPurge);
+                authRes = await client.PutAsJsonAsync(string.Format("https://dojo.zenedge.com/api/v2/webapps/{0}/purge_all", webappRes.Id), demoPurge);
 
                 if (!authRes.IsSuccessStatusCode)
                 {
@@ -82,7 +82,7 @@ namespace DojoApiDemo
                 Console.WriteLine("Purge all webapp cache task id: {0}", taskRes.TaskId);
 
                 Console.WriteLine("...Testing DELETE api/v2/webapps/<webapp_id>");
-                authRes = await client.DeleteAsync(string.Format("https://dojo-rc.zenedge.com/api/v2/webapps/{0}", webappRes.Id));
+                authRes = await client.DeleteAsync(string.Format("https://dojo.zenedge.com/api/v2/webapps/{0}", webappRes.Id));
 
                 if (!authRes.IsSuccessStatusCode)
                 {
