@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace DojoApiDemo
 {
@@ -18,6 +19,9 @@ namespace DojoApiDemo
 
         static async Task RunAsync()
         {
+            // Enable TLS 1.1 & TLS 1.2
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
             using (var client = new HttpClient())
             {
                 var form = new Dictionary<string, string>
